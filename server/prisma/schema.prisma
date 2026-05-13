@@ -1,0 +1,95 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+enum Role {
+  USER
+  ADMIN
+}
+
+enum DeliveryStatus {
+  GENERATED
+  IN_TRANSIT
+  NEAR_POST_OFFICE
+  OUT_FOR_DELIVERY
+  DELIVERED
+  EXPIRED
+}
+
+model User {
+  id            String         @id @default(uuid())
+  name          String
+  phone         String         @unique
+  email         String         @unique
+  passwordHash  String
+  role          Role           @default(USER)
+  createdAt     DateTime       @default(now())
+  deliveries    Delivery[]
+  notifications Notification[]
+
+  @@index([email])
+  @@index([phone])
+}
+
+model Delivery {
+  id               String         @id @default(uuid())
+  userId           String
+  user             User           @relation(fields: [userId], references: [id])
+  latitude         Float
+  longitude        Float
+  address          String
+  encryptedQrToken String         @unique
+  status           DeliveryStatus @default(GENERATED)
+  qrImagePath      String?
+  postmanId        String?
+  postman          Postman?       @relation(fields: [postmanId], references: [id])
+  generatedAt      DateTime       @default(now())
+  deliveredAt      DateTime?
+  expiresAt        DateTime
+  trackingLogs     TrackingLog[]
+
+  @@index([userId])
+  @@index([status])
+  @@index([postmanId])
+  @@index([expiresAt])
+}
+
+model Postman {
+  id           String     @id @default(uuid())
+  employeeId   String     @unique
+  name         String
+  passwordHash String
+  deliveries   Delivery[]
+  createdAt    DateTime   @default(now())
+
+  @@index([employeeId])
+}
+
+model Notification {
+  id        String   @id @default(uuid())
+  userId    String
+  user      User     @relation(fields: [userId], references: [id])
+  message   String
+  isRead    Boolean  @default(false)
+  createdAt DateTime @default(now())
+
+  @@index([userId])
+  @@index([isRead])
+}
+
+model TrackingLog {
+  id         String   @id @default(uuid())
+  deliveryId String
+  delivery   Delivery @relation(fields: [deliveryId], references: [id], onDelete: Cascade)
+  latitude   Float
+  longitude  Float
+  updatedAt  DateTime @default(now())
+
+  @@index([deliveryId])
+}

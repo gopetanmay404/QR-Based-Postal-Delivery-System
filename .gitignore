@@ -1,0 +1,16 @@
+node_modules/
+dist/
+build/
+.env
+.env.local
+.env.production
+*.log
+npm-debug.log*
+.DS_Store
+Thumbs.db
+coverage/
+.nyc_output/
+server/secure-qr/
+*.pem
+*.key
+.vscode/
