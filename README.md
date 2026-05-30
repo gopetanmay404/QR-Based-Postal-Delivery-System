@@ -100,14 +100,7 @@ npm run dev
 - Frontend: http://localhost:5173
 - Backend API: http://localhost:5000/api/health
 
-## 🔑 Default Credentials
 
-| Role | Email/ID | Password |
-|------|----------|----------|
-| Admin | admin@govdelivery.in | Admin@123456 |
-| User | user@example.com | User@123456 |
-| Postman | POST001 | Postman@123 |
-| Postman | POST002 | Postman@123 |
 
 ## 🛡️ Security Features
 
