@@ -1,5 +1,13 @@
 # 🏛️ Secure Government Document Delivery & Live Tracking System
 
+
+![Status](https://img.shields.io/badge/Status-Active-success)
+![Backend](https://img.shields.io/badge/Backend-Node.js-green)
+![Frontend](https://img.shields.io/badge/Frontend-React-blue)
+![Database](https://img.shields.io/badge/Database-PostgreSQL-blue)
+![Security](https://img.shields.io/badge/Security-High-red)
+
+
 A full-stack enterprise-grade web application for secure delivery of government documents (PAN Card, Passport, Aadhaar, Voter ID, Certificates) with encrypted QR codes, live GPS tracking, and real-time notifications.
 
 
