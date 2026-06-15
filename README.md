@@ -2,6 +2,53 @@
 
 A full-stack enterprise-grade web application for secure delivery of government documents (PAN Card, Passport, Aadhaar, Voter ID, Certificates) with encrypted QR codes, live GPS tracking, and real-time notifications.
 
+
+
+
+## 👥 Project Team
+
+This project has been developed as part of the Bachelor of Technology (B.Tech) in Information Technology at Noida Institute of Engineering and Technology (NIET), Greater Noida.
+
+---
+
+### 🎓 Core Development Team
+
+**• Prachi Varshney**  
+Roll No: 2201330130131  
+**Key Contribution:** Designed scalable system architecture, developed backend APIs, implemented secure authentication system (JWT + encryption), and handled overall system integration and performance optimization.
+
+---
+
+**• Vanshika**  
+Roll No: 2201330130211  
+**Key Contribution:** Designed and managed database architecture using PostgreSQL/Supabase, optimized data models, and ensured efficient and reliable backend data flow.
+
+---
+
+**• Tanmay Gope**  
+Roll No: 2201330130202  
+**Key Contribution:** Led full-stack development, implemented QR-based authentication system, real-time GPS tracking with Socket.IO, frontend-backend integration, and deployment workflow design.
+
+---
+
+### 👨‍🏫 Project Supervisor
+
+**Mr. Minhaj Nezami**  
+Assistant Professor, Department of Information Technology  
+NIET, Greater Noida
+
+---
+
+### 🏛️ Institution
+
+Noida Institute of Engineering and Technology (NIET), Greater Noida  
+Affiliated to Dr. A.P.J. Abdul Kalam Technical University, Lucknow  
+School of Computer Science & Information Technology  
+
+
+
+
+
 ## 🚀 Tech Stack
 
 ### Frontend
